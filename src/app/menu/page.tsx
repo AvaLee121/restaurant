@@ -3,7 +3,7 @@ import Image from 'next/image'
 const MenuPage = () => {
   return (
     <div>
-      
+      menupage
     </div>
   )
 }
