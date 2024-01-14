@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   price: number;
@@ -12,6 +12,10 @@ const Price = ({ price, id, options }: Props) => {
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(0);
 
+  useEffect(()=>{
+    setTotal(quantity * (options ? price + options[selected].additionalPrice : price));
+  }, [quantity, selected, options, price])
+  
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-xl font-bold">${total.toFixed(2)}</h1>
@@ -21,13 +25,11 @@ const Price = ({ price, id, options }: Props) => {
           <button
             key={option.title}
             className="min-w-[6rem] p-2 ring-1 ring-red-400 rounded-md"
-            style={
-                {
-                    background: selected === index ? " rgb(248 113 113)" : "white",
-                    color: selected === index ? " white" : "red"
-                }
-            }
-            onClick={()=>setSelected(index)}
+            style={{
+              background: selected === index ? " rgb(248 113 113)" : "white",
+              color: selected === index ? " white" : "red",
+            }}
+            onClick={() => setSelected(index)}
           >
             {option.title}
           </button>
@@ -36,10 +38,18 @@ const Price = ({ price, id, options }: Props) => {
       <div className="flex items-center">
         <div className="flex justify-between w-full p-3 ring-1 ring-red-400">
           <span>Quantity</span>
-          <div className="flex flex-row gap-4 items-center">
-            <button>{"<"}</button>
+          <div className="flex flex-row gap-5 items-center">
+            <button
+              onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
+            >
+              {"<"}
+            </button>
             <span>{quantity}</span>
-            <button>{">"}</button>
+            <button
+              onClick={() => setQuantity((prev) => (prev < 9 ? prev + 1 : 9))}
+            >
+              {">"}
+            </button>
           </div>
         </div>
         <button className="uppercase w-56 p-3 text-white ring-1 ring-red-400 bg-red-500">
