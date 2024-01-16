@@ -8,8 +8,8 @@ const Offer = () => {``
       {/* text container */}
       <div className='flex-1 text-white flex flex-col text-center items-center justify-center gap-8 p-6'>
         <h1 className='text-5xl font-bold xl:6xl p-4'>Delicious Burger & French Fry</h1>
-        <p className='xl:text-xl'>Progressively simplify effective e-toilers and process-centric methods of empowerment. Quickly pontificate parallel.</p>
-        <CountDown />
+        <div className='xl:text-xl'>Progressively simplify effective e-toilers and process-centric methods of empowerment. Quickly pontificate parallel.</div>
+        {/* <CountDown /> */}
         <button className='bg-red-500 py-3 px-6 cursor-pointer rounded-md'>Order Now</button>
       </div>
       {/* image container */}

@@ -23,7 +23,7 @@ const Featured = () => {
               {/* text container */}
               <div className='flex-1 flex flex-col py-8 gap-4 2xl:gap-8 items-center text-center justify-center'>
                 <h1 className='text-xl font-bold uppercase xl:text-2xl 2xl:text-4xl'>{item.title}</h1>
-                <p className='p-4 2xl:text-2xl 2xl:p-8'>{item.desc}</p>
+                <div className='p-4 2xl:text-2xl 2xl:p-8'>{item.desc}</div>
                 <span className='text-xl font-bold xl:text-2xl 2xl:text-4xl'>£ {item.price}</span>
                 <button className='bg-red-500 text-white p-2 cursor-pointer rounded-md xl:text-xl 2xl:text-2xl '>Add to Cart</button>
               </div>
