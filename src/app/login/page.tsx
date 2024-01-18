@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 
 const LoginPage = () => {
+
+  
   return (
     <div className="w-screen h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] p-4 flex items-center justify-center">
       {/* box */}
