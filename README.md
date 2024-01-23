@@ -1,2 +1,1 @@
-This is a [Next.js](https://nextjs.org/) project
-
+Full Stack Restaurant Food Ordering App
