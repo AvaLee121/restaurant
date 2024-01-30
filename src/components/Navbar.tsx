@@ -3,6 +3,7 @@ import Menu from './Menu'
 import React from 'react'
 import CartIcon from './CartIcon';
 import Image from 'next/image';
+import UserLinks from './UserLinks';
 
 const Navbar = () => {
 
@@ -27,17 +28,12 @@ const Navbar = () => {
         <Menu />
       </div>
        {/* right links */}
-      <div className='hidden md:flex gap-4 items-center justify-end flex-1'>
-        <div className='md:absolute top-3 r-2 lg:static flex items-center gap-2 cursor-pointer bg-orange-300 px-1 rounded-md'>
-          <Image src="/phone.png" width={20} height={20} alt={''}/>
-          <span>089 267 6871</span>
+      <div className='hidden md:flex gap-8 items-center justify-end flex-1'>
+        <div className='md:absolute lg:static flex items-center gap-1 cursor-pointer bg-orange-300 px-2 rounded-md'>
+          <Image src="/phone.png" width={15} height={15} alt={''}/>
+          <span className='bg-orange-300 rounded-md px-1'>0892676871</span>
         </div>
-        {!user ? (
-        <Link href="/login">Login</Link>
-        ):(
-        <Link href="/order">Order</Link>
-        )
-        }
+        <UserLinks/>
         <CartIcon/>
       </div>
     </div>
