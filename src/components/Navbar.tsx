@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className='hidden md:flex gap-8 items-center justify-end flex-1'>
         <div className='md:absolute lg:static flex items-center gap-1 cursor-pointer bg-orange-300 px-2 rounded-md'>
           <Image src="/phone.png" width={15} height={15} alt={''}/>
-          <span className='bg-orange-300 rounded-md px-1'>0892676871</span>
+          <span className='bg-orange-300 rounded-md px-1 relative'>0892676871</span>
         </div>
         <UserLinks/>
         <CartIcon/>

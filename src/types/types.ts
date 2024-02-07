@@ -16,4 +16,3 @@ export type ProductType = {
     options?: { title: string; addtionalPrice: number }[];
   }[];
 
-  
